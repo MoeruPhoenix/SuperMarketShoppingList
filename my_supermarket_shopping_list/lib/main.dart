@@ -18,6 +18,7 @@ class MyShoppinglist extends StatefulWidget {
   _MyShoppinglistState createState() => _MyShoppinglistState();
 }
 
+// ignore: camel_case_types
 class list {
   bool strikethrough;
   String item;
@@ -64,6 +65,7 @@ class _MyShoppinglistState extends State<MyShoppinglist> {
           // ignore: non_constant_identifier_names
           showDialog(
               context: context,
+              // ignore: non_constant_identifier_names
               builder: (BuildContext) {
                 return SingleChildScrollView(
                   child: AlertDialog(
