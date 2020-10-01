@@ -96,8 +96,7 @@ class _AboutPageState extends State<AboutPage> {
 
                         //Bio
                         ExpandableText(
-                          'I am an aspiring software developer who is 21 years old. '
-                              '\nCurrently I am a Senior attending the Northern Caribbean University Pursuing a Bsc. in Computer Information Systems.\n',
+                          'I am an aspiring software developer who is 21 years old. Currently I am a Senior attending the Northern Caribbean University Pursuing a Bsc. in Computer Information Systems.\n',
                           expandText: 'show more\n',
                           collapseText: 'show less\n',
                           style: TextStyle(
@@ -137,7 +136,7 @@ class _AboutPageState extends State<AboutPage> {
                         ),
                         //Online Cafeteria
                         ExpandableText(
-                          'Sorenson Hall Online Cafeteria - An e-commerce platform focused on providing the students, faculty and guests of the Northern Caribbean University,  Mandeville campus witht eh ability to make online purchases of cafeteria items.'
+                          'Sorenson Hall Online Cafeteria - An e-commerce platform focused on providing the students, faculty and guests of the Northern Caribbean University,  Mandeville campus with the ability to make online purchases of cafeteria items.'
                               'This application was developed using C#, ASP.NET CORE, MVC, Visual Studio and MySQL. \n.',
                           expandText: 'show more\n',
                           collapseText: 'show less\n',
