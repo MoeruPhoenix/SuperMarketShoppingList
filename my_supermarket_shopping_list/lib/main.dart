@@ -18,16 +18,20 @@ class MyShoppinglist extends StatefulWidget {
   _MyShoppinglistState createState() => _MyShoppinglistState();
 }
 
+class list {
+  bool strikethrough;
+  String item;
+}
 class _MyShoppinglistState extends State<MyShoppinglist> {
   //Variables
-  List item = List();
+  List <list>item =  <list> [];
   String input = "";
   bool strikethrough = false;
 
-  void _strikethroughText() {
+  void _strikethroughText(int index) {
     setState(() {
-      if (strikethrough == true) {
-        Text(item.toString(),
+      if (item[index].strikethrough == true) {
+        Text(item[index].item.toString(),
             style: TextStyle(
                 fontSize: 18, decoration: TextDecoration.lineThrough));
       }
@@ -75,8 +79,12 @@ class _MyShoppinglistState extends State<MyShoppinglist> {
                       FlatButton(
                           onPressed: () {
                             setState(() {
-                              item.add(input);
-                            });
+                              if (input != ""){
+                              list i = new list(
+
+                              ); i.item = input;
+                              i.strikethrough =false; item.add(i);
+                            }});
 
                             Navigator.of(context).pop();
                           },
@@ -95,7 +103,7 @@ class _MyShoppinglistState extends State<MyShoppinglist> {
       body: ListView.builder(
           itemCount: item.length,
           itemBuilder: (BuildContext context, int index) {
-            if (strikethrough == true) {
+            if (item[index].strikethrough == true) {
               return Card(
                 elevation: 4,
                 margin: EdgeInsets.all(8.0),
@@ -113,16 +121,16 @@ class _MyShoppinglistState extends State<MyShoppinglist> {
                   title: FlatButton(
                       onPressed: () => {
                         setState(() {
-                          if (strikethrough == true) {
-                            strikethrough = false;
+                          if (item[index].strikethrough == true) {
+                            item[index].strikethrough = false;
                           } else {
-                            strikethrough = true;
+                            item[index].strikethrough = true;
                           }
-                          _strikethroughText();
+                          _strikethroughText(index);
                         })
                       },
                       child: Text(
-                        item[index],
+                        item[index] .item,
                         style: TextStyle(
                           decoration: TextDecoration.lineThrough, color: Colors.red,
                         ),)),
@@ -147,20 +155,20 @@ class _MyShoppinglistState extends State<MyShoppinglist> {
                   title: FlatButton(
                       onPressed: () => {
                         setState(() {
-                          if (strikethrough == true) {
-                            strikethrough = false;
+                          if (item[index].strikethrough == true) {
+                            item[index].strikethrough = false;
                           } else {
-                            strikethrough = true;
+                            item[index].strikethrough = true;
                           }
-                          _strikethroughText();
+                          _strikethroughText(index);
                         })
                       },
                       child: Text(
-                        item[index],)),
+                        item[index].item,)),
                 ),
               );
             }
-            //StrikeThrough(item),
+
           }),
 
       //Menu
