@@ -61,26 +61,28 @@ class _MyShoppinglistState extends State<MyShoppinglist> {
           showDialog(
               context: context,
               builder: (BuildContext) {
-                return AlertDialog(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  title: Text("Add item"),
-                  content: TextField(
-                    onChanged: (String value) {
-                      input = value;
-                    },
-                  ),
-                  actions: <Widget>[
-                    FlatButton(
-                        onPressed: () {
-                          setState(() {
-                            item.add(input);
-                          });
+                return SingleChildScrollView(
+                  child: AlertDialog(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)),
+                    title: Text("Add item"),
+                    content: TextField(
+                      onChanged: (String value) {
+                        input = value;
+                      },
+                    ),
+                    actions: <Widget>[
+                      FlatButton(
+                          onPressed: () {
+                            setState(() {
+                              item.add(input);
+                            });
 
-                          Navigator.of(context).pop();
-                        },
-                        child: Text("Add")),
-                  ],
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("Add")),
+                    ],
+                  ),
                 );
               });
         },
@@ -122,7 +124,7 @@ class _MyShoppinglistState extends State<MyShoppinglist> {
                       child: Text(
                         item[index],
                         style: TextStyle(
-                          decoration: TextDecoration.lineThrough, color: Colors.red
+                          decoration: TextDecoration.lineThrough, color: Colors.red,
                         ),)),
                 ),
               );
